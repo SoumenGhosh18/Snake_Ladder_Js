@@ -1,4 +1,5 @@
 const WinningPosition = 100;
+let count =0;
 class SnakeLadder{
    
     generateRandomNo(){
@@ -29,10 +30,12 @@ class SnakeLadder{
                     startPosition = startPosition - DiceNo
                     }
                     console.log("now your position is..." + startPosition)
+                    count++;
                     break;
 
                 case 2:
                     console.log("you got " + DiceNo + " " + "so u have to wait in same position because its no play");
+                    count++;
                    break;
                 case 3:
                     console.log("you got...." + DiceNo + " " + "so u r in front of ladder") 
@@ -40,9 +43,11 @@ class SnakeLadder{
                     if(startPosition > WinningPosition)
                      startPosition = startPosition - DiceNo;
                     console.log("now your position is..." + startPosition);
+                    count++;
                     break;
             }
         }
+        console.log("Number of times the dices rolled...."+count);
     }
 }
 module.exports = new SnakeLadder();
