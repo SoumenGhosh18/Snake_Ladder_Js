@@ -9,14 +9,24 @@ class SnakeLadder{
         return (Math.floor(Math.random() * 3)) +1;
     }
     startPlayingFurther = () => {
+
         let WinningPosition = 100;
         let startPosition = 0;
+        while (startPosition <= WinningPosition) {
+   
             let DiceNo= this.generateRandomNo();
             let option = this.checkForTheOption();
             switch (option) {
                 case 1:
                     console.log("you got...." + DiceNo + " " + "so u r in front of snake") ;
+                    if (startPosition <0)
+                    {
+                        startPosition=0
+                    }
+                    else{
+
                     startPosition = startPosition - DiceNo
+                    }
                     console.log("now your position is..." + startPosition)
                     break;
 
@@ -30,6 +40,7 @@ class SnakeLadder{
                     break;
             }
         }
+    }
 }
 
 module.exports = new SnakeLadder();
