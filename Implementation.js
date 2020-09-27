@@ -1,4 +1,4 @@
-
+const WinningPosition = 100;
 class SnakeLadder{
    
     generateRandomNo(){
@@ -10,10 +10,10 @@ class SnakeLadder{
     }
     startPlayingFurther = () => {
 
-        let WinningPosition = 100;
+        
         let startPosition = 0;
       
-        while (startPosition <= WinningPosition) {
+        while (startPosition != WinningPosition) {
    
             let DiceNo= this.generateRandomNo();
             let option = this.checkForTheOption();
@@ -37,18 +37,12 @@ class SnakeLadder{
                 case 3:
                     console.log("you got...." + DiceNo + " " + "so u r in front of ladder") 
                     startPosition = startPosition + DiceNo
-                   // console.log("now your position is..." + startPosition);
-                    if(startPosition > WinningPosition){
+                    if(startPosition > WinningPosition)
                      startPosition = startPosition - DiceNo;
                     console.log("now your position is..." + startPosition);
-                    }
-                    console.log("now your position is..." + startPosition);
-                    // if(startPosition == 100)
-                    // console.log("you win the game");
                     break;
             }
         }
     }
 }
-
 module.exports = new SnakeLadder();
