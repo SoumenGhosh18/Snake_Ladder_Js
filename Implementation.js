@@ -12,6 +12,7 @@ class SnakeLadder{
 
         let WinningPosition = 100;
         let startPosition = 0;
+      
         while (startPosition <= WinningPosition) {
    
             let DiceNo= this.generateRandomNo();
@@ -36,7 +37,14 @@ class SnakeLadder{
                 case 3:
                     console.log("you got...." + DiceNo + " " + "so u r in front of ladder") 
                     startPosition = startPosition + DiceNo
+                   // console.log("now your position is..." + startPosition);
+                    if(startPosition > WinningPosition){
+                     startPosition = startPosition - DiceNo;
                     console.log("now your position is..." + startPosition);
+                    }
+                    console.log("now your position is..." + startPosition);
+                    // if(startPosition == 100)
+                    // console.log("you win the game");
                     break;
             }
         }
